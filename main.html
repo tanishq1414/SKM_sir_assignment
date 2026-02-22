@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanishq Kumar Kashyap | Award-Winning Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Tanishq Kumar Kashyap - Full Stack Developer & AI Enthusiast. Creating immersive digital experiences with cutting-edge technology.">
+    <meta name="keywords" content="Full Stack Developer, AI Enthusiast, React, Node.js, Data Science, Machine Learning">
+    <meta name="author" content="Tanishq Kumar Kashyap">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Tanishq Kumar Kashyap | Full Stack Developer & AI Enthusiast">
+    <meta property="og:description" content="Explore the cosmic portfolio of a Full Stack Developer creating immersive digital experiences">
+    <meta property="og:type" content="website">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS for Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">TANISHQ KUMAR KASHYAP</div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar" id="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Tanishq Kumar Kashyap Logo" onerror="this.src='https://via.placeholder.com/150x150/6c5ce7/ffffff?text=TK'">
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certifications" class="nav-link">Certifications</a>
+                <a href="#achievements" class="nav-link">Achievements</a>
+                <a href="#blog" class="nav-link">Blog</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Galaxy Canvas Container -->
+    <div id="galaxy-container"></div>
+
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section id="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-name">
+                        <span>Tanishq Kumar</span><br>
+                        <span>Kashyap</span>
+                    </h1>
+                    <div class="hero-tagline">Full Stack Developer | AI Enthusiast</div>
+                    <p class="hero-intro">Crafting immersive digital experiences with cutting-edge technology. Building the future, one line of code at a time.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-eye"></i> View Projects
+                        </a>
+                        <a href="Tanishq_cv.pdf" download class="btn btn-outline">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <a href="https://github.com/tanishq1414" target="_blank" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tanishq-kumar-kashyap-a78788322" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:tanishqkrkashyap@gmail.com" class="social-icon" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <div class="orbit-ring"></div>
+                        <div class="orbit-ring"></div>
+                        <img src="tanishq.jpg" alt="Tanishq Kumar Kashyap" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400/6c5ce7/ffffff?text=TK'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section with HashTag Blinking Effect -->
+        <section id="about">
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-img-container glass-card">
+                    <img src="tanishq.jpg" alt="Tanishq Kumar Kashyap" class="about-img" onerror="this.src='https://via.placeholder.com/600x400/6c5ce7/ffffff?text=Tanishq+Kumar'">
+                </div>
+                <div class="about-content">
+                    <h3>Passionate Developer & AI Enthusiast</h3>
+                    <p class="about-text">
+                        I'm a Full Stack Developer and AI enthusiast with a passion for creating innovative solutions 
+                        that make a difference. Currently exploring the frontiers of technology, I specialize in building 
+                        responsive web applications and intelligent systems that enhance user experiences.
+                    </p>
+
+                    <!-- Stats Counter Section -->
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="10" id="stat-hackathons">0</div>
+                            <div class="stat-label">Hackathons</div>
+                            <div class="stat-plus">+</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="5" id="stat-finalist">0</div>
+                            <div class="stat-label">Finalist</div>
+                            <div class="stat-plus"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="8" id="stat-projects">0</div>
+                            <div class="stat-label">Ongoing Projects</div>
+                            <div class="stat-plus">+</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="6" id="stat-technologies">0</div>
+                            <div class="stat-label">Technologies</div>
+                            <div class="stat-plus">+</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="4" id="stat-expertise">0</div>
+                            <div class="stat-label">Expertise Areas</div>
+                            <div class="stat-plus">+</div>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2025-Present</div>
+                            <div class="timeline-content">
+                                <h4>ISEA MEITY CDAC 2025 Winner</h4>
+                                <p>CDAC-NOIDA</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024-Present</div>
+                            <div class="timeline-content">
+                                <h4>Finalist - Hack with Mait5.0</h4>
+                                <p>USICT - Competed in prestigious hackathon</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024-Present</div>
+                            <div class="timeline-content">
+                                <h4>Data Analytics</h4>
+                                <p>Advanced analytics and visualization</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2024-Present</div>
+                            <div class="timeline-content">
+                                <h4>Frontend Development</h4>
+                                <p>Innovate Labs - Creating immersive experiences</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="margin: 1.5rem 0 0.5rem;">Tech Interests</h4>
+                    <div class="tech-interests">
+                        <span class="tech-tag">Artificial Intelligence</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">Cloud Computing</span>
+                        <span class="tech-tag">Data Science</span>
+                        <span class="tech-tag">UI/UX Design</span>
+                    </div>
+
+                    <h4 style="margin: 1.5rem 0 0.5rem;">Soft Skills</h4>
+                    <div class="tech-interests">
+                        <span class="tech-tag">Problem Solving</span>
+                        <span class="tech-tag">Team Collaboration</span>
+                        <span class="tech-tag">Communication</span>
+                        <span class="tech-tag">Adaptability</span>
+                        <span class="tech-tag">Creativity</span>
+                        <span class="tech-tag">Leadership</span>
+                    </div>
+
+                    <a href="Tanishq_cv.pdf" download class="download-resume">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section with Thin Glowing Border -->
+        <section id="skills">
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-react"></i></div>
+                            <div class="skill-name">React</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-vuejs"></i></div>
+                            <div class="skill-name">Vue.js</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-js"></i></div>
+                            <div class="skill-name">JavaScript</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                            <div class="skill-name">HTML5</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                            <div class="skill-name">CSS3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-node"></i></div>
+                            <div class="skill-name">Node.js</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-python"></i></div>
+                            <div class="skill-name">Python</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-database"></i></div>
+                            <div class="skill-name">MongoDB</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-server"></i></div>
+                            <div class="skill-name">Express</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>AI/ML</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                            <div class="skill-name">TensorFlow</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                            <div class="skill-name">PyTorch</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="skill-name">Data Analysis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
+                            <div class="skill-name">Git</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-docker"></i></div>
+                            <div class="skill-name">Docker</div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon"><i class="fab fa-aws"></i></div>
+                            <div class="skill-name">AWS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                <button class="filter-btn" data-filter="ai">AI/ML</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="fullstack">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="EcoTracker" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">EcoTracker Dashboard</h3>
+                        <p class="project-desc">Real-time environmental monitoring dashboard with predictive analytics using machine learning.</p>
+                        <div class="project-tech">
+                            <span class="project-tech-icon"><i class="fab fa-react"></i></span>
+                            <span class="project-tech-icon"><i class="fab fa-node"></i></span>
+                            <span class="project-tech-icon"><i class="fas fa-brain"></i></span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="ai">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="HealthConnect" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">HealthConnect AI</h3>
+                        <p class="project-desc">Telemedicine platform with AI-powered diagnostics and patient monitoring system.</p>
+                        <div class="project-tech">
+                            <span class="project-tech-icon"><i class="fab fa-vuejs"></i></span>
+                            <span class="project-tech-icon"><i class="fab fa-python"></i></span>
+                            <span class="project-tech-icon"><i class="fas fa-robot"></i></span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="frontend">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="FinTech" class="project-img">
+                    <div class="project-content">
+                        <h3 class="project-title">FinTech Analytics</h3>
+                        <p class="project-desc">Financial analysis platform with real-time market data visualization.</p>
+                        <div class="project-tech">
+                            <span class="project-tech-icon"><i class="fab fa-angular"></i></span>
+                            <span class="project-tech-icon"><i class="fab fa-node"></i></span>
+                            <span class="project-tech-icon"><i class="fas fa-chart-bar"></i></span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section with Parallax -->
+        <section id="certifications" class="parallax-section">
+            <div class="parallax-bg"></div>
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">Certifications</h2>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Full Stack Development</h3>
+                    <p class="cert-issuer">Coursera</p>
+                    <p class="cert-date">2024</p>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Machine Learning Specialization</h3>
+                    <p class="cert-issuer">Stanford Online</p>
+                    <p class="cert-date">2024</p>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Advanced React</h3>
+                    <p class="cert-issuer">Meta</p>
+                    <p class="cert-date">2024</p>
+                </div>
+                <div class="certification-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Data Science Professional</h3>
+                    <p class="cert-issuer">IBM</p>
+                    <p class="cert-date">2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section with Parallax -->
+        <section id="achievements" class="parallax-section">
+            <div class="parallax-bg"></div>
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">Achievements</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>ISEA MEITY CDAC 2025 Winner</h3>
+                    <p>CDAC-NOIDA</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+                    <h3>Finalist - Hack with Mait5.0</h3>
+                    <p>USICT</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-award"></i></div>
+                    <h3>Best Innovation Award</h3>
+                    <p>College Tech Fest 2024</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-star"></i></div>
+                    <h3>Top 10 in National Hackathon</h3>
+                    <p>Smart India Hackathon 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">Latest Blog Posts</h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">AI</span>
+                            <span class="blog-tag">Machine Learning</span>
+                        </div>
+                        <h3 class="blog-title">Getting Started with TensorFlow</h3>
+                        <p class="blog-excerpt">Learn the basics of TensorFlow and build your first neural network...</p>
+                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">React</span>
+                            <span class="blog-tag">Performance</span>
+                        </div>
+                        <h3 class="blog-title">Optimizing React Apps</h3>
+                        <p class="blog-excerpt">Tips and tricks to make your React applications lightning fast...</p>
+                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
+                    <div class="blog-content">
+                        <div class="blog-tags">
+                            <span class="blog-tag">Data Science</span>
+                            <span class="blog-tag">Python</span>
+                        </div>
+                        <h3 class="blog-title">Data Visualization with Python</h3>
+                        <p class="blog-excerpt">Create stunning visualizations using Matplotlib and Seaborn...</p>
+                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">What People Say</h2>
+            </div>
+            <div class="testimonials-carousel swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="garv.jpg" alt="Garv" class="testimonial-img" onerror="this.src='https://via.placeholder.com/100x100/6c5ce7/ffffff?text=G'">
+                            <p class="testimonial-text">"Tanishq is an exceptional developer. His attention to detail and problem-solving skills are outstanding."</p>
+                            <h4 class="testimonial-name">Garv</h4>
+                            <p class="testimonial-role">CLASSMATE</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <img src="gaurav.jpg" alt="Gaurav" class="testimonial-img" onerror="this.src='https://via.placeholder.com/100x100/6c5ce7/ffffff?text=G'">
+                            <p class="testimonial-text">"Working with Tanishq was a pleasure. He delivered the project on time and exceeded our expectations."</p>
+                            <h4 class="testimonial-name">Gaurav</h4>
+                            <p class="testimonial-role">CLASSMATE</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <span class="hash-tag blinking-hash">#</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <a href="mailto:tanishqkrkashyap@gmail.com" class="contact-text">tanishqkrkashyap@gmail.com</a>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <a href="https://github.com/tanishq1414" target="_blank" class="contact-text">github.com/tanishq1414</a>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <a href="https://www.linkedin.com/in/tanishq-kumar-kashyap-a78788322" target="_blank" class="contact-text">Tanishq Kumar Kashyap</a>
+                    </div>
+
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marker-alt"></i> New Delhi, India
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="success-message hidden" id="successMessage">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. I'll get back to you soon.</p>
+                    </div>
+
+                    <div id="formFields">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Tanishq Kumar Kashyap. All rights reserved.</p>
+    </footer>
+
+    <!-- Hidden 404 Page Template -->
+    <div class="error-page" style="display: none;" id="errorPage">
+        <div>
+            <div class="error-code">404</div>
+            <h2 class="error-title">Page Not Found</h2>
+            <p class="error-text">The page you're looking for doesn't exist or has been moved.</p>
+            <a href="#home" class="btn btn-primary">Go Home</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
