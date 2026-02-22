@@ -1,550 +1,614 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanishq Kumar Kashyap | Award-Winning Portfolio</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Tanishq Kumar Kashyap - Full Stack Developer & AI Enthusiast. Creating immersive digital experiences with cutting-edge technology.">
-    <meta name="keywords" content="Full Stack Developer, AI Enthusiast, React, Node.js, Data Science, Machine Learning">
-    <meta name="author" content="Tanishq Kumar Kashyap">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Tanishq Kumar Kashyap | Full Stack Developer & AI Enthusiast">
-    <meta property="og:description" content="Explore the cosmic portfolio of a Full Stack Developer creating immersive digital experiences">
-    <meta property="og:type" content="website">
-    
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Swiper CSS for Carousel -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TANISHQ · slow decrypt to glitch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a000c;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+      overflow: hidden;
+      color: #f2d9ff;
+    }
+
+    /* deep magenta-black space */
+    .magenta-void {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 40% 50%, #1c001e 0%, #040004 90%);
+      isolation: isolate;
+    }
+
+    /* particle canvas – magenta/white falling stars */
+    #magenta-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* content layer above particles */
+    .core {
+      position: relative;
+      z-index: 20;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: radial-gradient(circle at 50% 50%, rgba(45, 0, 30, 0.25) 0%, #0b000e 95%);
+    }
+
+    /* headline container */
+    #decrypted-headline {
+      display: inline-block;
+      font-size: clamp(4rem, 16vw, 8rem);
+      font-weight: 800;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      /* no glow — removed */
+    }
+
+    /* parent span style for decrypted (no glow) */
+    .decrypt-parent {
+      display: inline-block;
+      white-space: pre-wrap;
+      color: #ffdcff; /* fallback */
+    }
+
+    /* letter classes – no glow, just pure magenta tones */
+    .magenta-revealed {
+      color: #ffdcff;
+      /* text-shadow removed – no glow */
+    }
+    .magenta-encrypted {
+      color: #ffa0e0;
+      /* no glow */
+    }
+
+    /* glitch style (applied after decryption finishes) */
+    .glitch-active {
+      position: relative;
+      color: #f0c0ff;
+      animation: glitch-skew 4s infinite step-end;
+    }
+    .glitch-active::before,
+    .glitch-active::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      clip: rect(0, 0, 0, 0);
+    }
+    .glitch-active::before {
+      left: 2px;
+      text-shadow: -1px 0 #ff66cc;
+      animation: glitch-anim-1 3s infinite linear alternate-reverse;
+    }
+    .glitch-active::after {
+      left: -2px;
+      text-shadow: 1px 0 #b30086;
+      animation: glitch-anim-2 3.5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim-1 {
+      0% { clip: rect(15px, 9999px, 45px, 0); }
+      5% { clip: rect(65px, 9999px, 95px, 0); }
+      10% { clip: rect(22px, 9999px, 52px, 0); }
+      15% { clip: rect(38px, 9999px, 68px, 0); }
+      20% { clip: rect(8px, 9999px, 28px, 0); }
+      25% { clip: rect(55px, 9999px, 85px, 0); }
+      30% { clip: rect(18px, 9999px, 48px, 0); }
+      35% { clip: rect(48px, 9999px, 78px, 0); }
+      40% { clip: rect(12px, 9999px, 42px, 0); }
+      45% { clip: rect(72px, 9999px, 98px, 0); }
+      50% { clip: rect(28px, 9999px, 58px, 0); }
+      55% { clip: rect(42px, 9999px, 72px, 0); }
+      60% { clip: rect(5px, 9999px, 35px, 0); }
+      65% { clip: rect(62px, 9999px, 92px, 0); }
+      70% { clip: rect(32px, 9999px, 62px, 0); }
+      75% { clip: rect(52px, 9999px, 82px, 0); }
+      80% { clip: rect(24px, 9999px, 54px, 0); }
+      85% { clip: rect(44px, 9999px, 74px, 0); }
+      90% { clip: rect(9px, 9999px, 39px, 0); }
+      95% { clip: rect(58px, 9999px, 88px, 0); }
+      100% { clip: rect(19px, 9999px, 49px, 0); }
+    }
+    @keyframes glitch-anim-2 {
+      0% { clip: rect(55px, 9999px, 85px, 0); }
+      5% { clip: rect(25px, 9999px, 55px, 0); }
+      10% { clip: rect(68px, 9999px, 98px, 0); }
+      15% { clip: rect(12px, 9999px, 42px, 0); }
+      20% { clip: rect(38px, 9999px, 68px, 0); }
+      25% { clip: rect(72px, 9999px, 98px, 0); }
+      30% { clip: rect(8px, 9999px, 38px, 0); }
+      35% { clip: rect(48px, 9999px, 78px, 0); }
+      40% { clip: rect(18px, 9999px, 48px, 0); }
+      45% { clip: rect(58px, 9999px, 88px, 0); }
+      50% { clip: rect(32px, 9999px, 62px, 0); }
+      55% { clip: rect(62px, 9999px, 92px, 0); }
+      60% { clip: rect(5px, 9999px, 35px, 0); }
+      65% { clip: rect(42px, 9999px, 72px, 0); }
+      70% { clip: rect(72px, 9999px, 98px, 0); }
+      75% { clip: rect(22px, 9999px, 52px, 0); }
+      80% { clip: rect(52px, 9999px, 82px, 0); }
+      85% { clip: rect(9px, 9999px, 39px, 0); }
+      90% { clip: rect(35px, 9999px, 65px, 0); }
+      95% { clip: rect(65px, 9999px, 95px, 0); }
+      100% { clip: rect(15px, 9999px, 45px, 0); }
+    }
+    @keyframes glitch-skew {
+      0% { transform: skew(0deg); }
+      10% { transform: skew(1deg); }
+      20% { transform: skew(-1deg); }
+      30% { transform: skew(2deg); }
+      40% { transform: skew(-1deg); }
+      50% { transform: skew(0deg); }
+      60% { transform: skew(1deg); }
+      70% { transform: skew(-1deg); }
+      80% { transform: skew(1deg); }
+      90% { transform: skew(-1deg); }
+      100% { transform: skew(0deg); }
+    }
+
+    /* tagline container – properly aligned block */
+    #decrypted-tagline {
+      display: block;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto 2.8rem auto;
+      font-size: clamp(1rem, 4vw, 1.7rem);
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1.7;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px dashed #ff66bb;
+      text-align: center;
+      /* no glow */
+    }
+
+    .tagline-parent {
+      display: inline-block;
+      white-space: pre-wrap;
+      color: #ffb0e0;
+    }
+
+    /* button – magenta boundary, minimal glow */
+    .magenta-boundary {
+      background: transparent;
+      border: 2px solid #ff77cc;
+      border-radius: 0;
+      padding: 1rem 4rem;
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: 6px;
+      color: #ffe0fa;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      background-color: rgba(40, 0, 25, 0.5);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 0 8px rgba(255, 64, 160, 0.2); /* minimal */
+      font-family: inherit;
+      margin-top: 0.8rem;
+      min-width: 340px;
+    }
+
+    .magenta-boundary:hover {
+      border-color: #ffaae6;
+      background-color: rgba(80, 0, 50, 0.6);
+      box-shadow: 0 0 15px rgba(255, 128, 192, 0.3);
+      color: white;
+      letter-spacing: 8px;
+    }
+
+    .magenta-hint {
+      font-size: 0.8rem;
+      color: #b04c9e;
+      margin-top: 1rem;
+      letter-spacing: 4px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursor-follower"></div>
+  <div class="magenta-void">
+    <canvas id="magenta-particles"></canvas>
 
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
-            <div class="loader-text">TANISHQ KUMAR KASHYAP</div>
-            <div class="loader-progress">
-                <div class="loader-progress-bar" id="loader-progress-bar"></div>
-            </div>
-        </div>
+    <div class="core">
+      <!-- headline injected here -->
+      <div id="decrypted-headline"></div>
+      <!-- tagline injected here (block, centered) -->
+      <div id="decrypted-tagline"></div>
+
+      <button class="magenta-boundary" id="enter-portfolio-btn">ENTER TANISHQ PORTFOLIO</button>
+      <div class="magenta-hint">Architecting intelligence in a world still learning to think ✦</div>
     </div>
+  </div>
 
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scroll-progress"></div>
+  <script>
+    (function() {
+      // --------------------------------------------------------------
+      // 1. DecryptedText that transitions to glitch after finishing
+      //    Slower speed, removes glow, then applies glitch class
+      // --------------------------------------------------------------
+      function createDecryptedTextWithGlitch(options) {
+        const {
+          text = '',
+          speed = 120,           // slower duration (was 60, now 120ms per step)
+          maxIterations = 16,     // more iterations = longer scramble
+          sequential = true,
+          revealDirection = 'center',
+          useOriginalCharsOnly = false,
+          characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+',
+          className = 'magenta-revealed',
+          parentClassName = 'decrypt-parent',
+          encryptedClassName = 'magenta-encrypted',
+          animateOn = 'both',
+          onComplete = null,      // callback when decryption fully done
+        } = options;
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo.png" alt="Tanishq Kumar Kashyap Logo" onerror="this.src='https://via.placeholder.com/100x100/6c5ce7/ffffff?text=TK'">
-            </div>
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#resume" class="nav-link">Resume</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
+        const container = document.createElement('span');
+        container.className = parentClassName;
+        container.style.display = 'inline-block';
+        container.style.whiteSpace = 'pre-wrap';
 
-    <!-- Particles Canvas -->
-    <canvas id="particles-canvas"></canvas>
+        // sr-only
+        const srSpan = document.createElement('span');
+        srSpan.className = 'sr-only';
+        srSpan.textContent = text;
+        container.appendChild(srSpan);
 
-    <main class="main-container">
-        <!-- Hero Section -->
-        <section id="home">
-            <div class="hero">
-                <div class="hero-content">
-                    <h1 class="hero-name">
-                        <span>Tanishq Kumar</span><br>
-                        <span>Kashyap</span>
-                    </h1>
-                    <div class="hero-tagline">Full Stack Developer | AI Enthusiast</div>
-                    <p class="hero-intro">Crafting immersive digital experiences with cutting-edge technology. Building the future, one line of code at a time.</p>
-                    
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-eye"></i> View Projects
-                        </a>
-                        <a href="Tanishq_cv.pdf" download class="btn btn-outline">
-                            <i class="fas fa-download"></i> Download Resume
-                        </a>
-                        <a href="#contact" class="btn btn-outline">
-                            <i class="fas fa-envelope"></i> Contact Me
-                        </a>
-                    </div>
+        const visualSpan = document.createElement('span');
+        visualSpan.setAttribute('aria-hidden', 'true');
+        container.appendChild(visualSpan);
 
-                    <div class="hero-socials">
-                        <a href="https://github.com/tanishq1414" target="_blank" class="social-icon" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/tanishq-kumar-kashyap-a78788322" target="_blank" class="social-icon" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="mailto:tanishqkrkashyap@gmail.com" class="social-icon" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
+        // state
+        let displayText = text;
+        let isHovering = false;
+        let isScrambling = false;
+        let revealedIndices = new Set();
+        let hasAnimated = false;
+        let intervalId = null;
+        let finished = false;      // becomes true when fully revealed naturally
 
-                <div class="hero-image">
-                    <div class="profile-container">
-                        <div class="orbit-ring"></div>
-                        <div class="orbit-ring"></div>
-                        <img src="tanishq.jpg" alt="Tanishq Kumar Kashyap" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400/6c5ce7/ffffff?text=TK'">
-                    </div>
-                </div>
-            </div>
-        </section>
+        // helper
+        function getNextIndex(revealedSet) {
+          const len = text.length;
+          switch (revealDirection) {
+            case 'start': return revealedSet.size;
+            case 'end': return len - 1 - revealedSet.size;
+            case 'center': {
+              const middle = Math.floor(len / 2);
+              const offset = Math.floor(revealedSet.size / 2);
+              let next = revealedSet.size % 2 === 0 ? middle + offset : middle - offset - 1;
+              if (next >= 0 && next < len && !revealedSet.has(next)) return next;
+              for (let i = 0; i < len; i++) if (!revealedSet.has(i)) return i;
+              return 0;
+            }
+            default: return revealedSet.size;
+          }
+        }
 
-        <!-- About Section -->
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-img-container glass-card">
-                    <img src="tanishq.jpg" alt="Tanishq Kumar Kashyap" class="about-img" onerror="this.src='https://via.placeholder.com/600x400/6c5ce7/ffffff?text=Tanishq+Kumar'">
-                </div>
-                <div class="about-content">
-                    <h3>Passionate Developer & AI Enthusiast</h3>
-                    <p class="about-text">
-                        I'm a Full Stack Developer and AI enthusiast with a passion for creating innovative solutions 
-                        that make a difference. Currently exploring the frontiers of technology, I specialize in building 
-                        responsive web applications and intelligent systems that enhance user experiences.
-                    </p>
+        function shuffleText(originalText, revealed) {
+          const availableChars = useOriginalCharsOnly
+            ? Array.from(new Set(originalText.split(''))).filter(c => c !== ' ')
+            : characters.split('');
 
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-year">2025-Present</div>
-                            <div class="timeline-content">
-                                <h4>ISEA MEITY CDAC 2025 Winner</h4>
-                                <p>CDAC-NOIDA</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2024-Present</div>
-                            <div class="timeline-content">
-                                <h4>Finalist - Hack with Mait5.0</h4>
-                                <p>USICT - Competed in prestigious hackathon</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2024-Present</div>
-                            <div class="timeline-content">
-                                <h4>Data Analytics</h4>
-                                <p>Advanced analytics and visualization</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-year">2024-Present</div>
-                            <div class="timeline-content">
-                                <h4>Frontend Development</h4>
-                                <p>Innovate Labs - Creating immersive experiences</p>
-                            </div>
-                        </div>
-                    </div>
+          if (useOriginalCharsOnly) {
+            const positions = originalText.split('').map((char, i) => ({
+              char,
+              isSpace: char === ' ',
+              index: i,
+              isRevealed: revealed.has(i)
+            }));
+            const nonSpaceChars = positions.filter(p => !p.isSpace && !p.isRevealed).map(p => p.char);
+            for (let i = nonSpaceChars.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [nonSpaceChars[i], nonSpaceChars[j]] = [nonSpaceChars[j], nonSpaceChars[i]];
+            }
+            let idx = 0;
+            return positions.map(p => {
+              if (p.isSpace) return ' ';
+              if (p.isRevealed) return originalText[p.index];
+              return nonSpaceChars[idx++];
+            }).join('');
+          } else {
+            return originalText.split('').map((char, i) => {
+              if (char === ' ') return ' ';
+              if (revealed.has(i)) return originalText[i];
+              return availableChars[Math.floor(Math.random() * availableChars.length)];
+            }).join('');
+          }
+        }
 
-                    <h4 style="margin: 1.5rem 0 0.5rem;">Tech Interests</h4>
-                    <div class="tech-interests">
-                        <span class="tech-tag">Artificial Intelligence</span>
-                        <span class="tech-tag">Machine Learning</span>
-                        <span class="tech-tag">Web Development</span>
-                        <span class="tech-tag">Cloud Computing</span>
-                        <span class="tech-tag">Data Science</span>
-                        <span class="tech-tag">UI/UX Design</span>
-                    </div>
+        function render() {
+          const letters = displayText.split('');
+          visualSpan.innerHTML = letters.map((ch, idx) => {
+            const isRevealedOrDone = revealedIndices.has(idx) || !isScrambling || !isHovering;
+            const spanClass = isRevealedOrDone ? className : encryptedClassName;
+            return `<span class="${spanClass}">${ch === ' ' ? '&nbsp;' : ch}</span>`;
+          }).join('');
+          srSpan.textContent = displayText;
+        }
 
-                    <h4 style="margin: 1.5rem 0 0.5rem;">Soft Skills</h4>
-                    <div class="tech-interests">
-                        <span class="tech-tag">Problem Solving</span>
-                        <span class="tech-tag">Team Collaboration</span>
-                        <span class="tech-tag">Communication</span>
-                        <span class="tech-tag">Adaptability</span>
-                        <span class="tech-tag">Creativity</span>
-                        <span class="tech-tag">Leadership</span>
-                    </div>
+        function stopScramble(finalText = text, complete = false) {
+          if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+          }
+          isScrambling = false;
+          displayText = finalText;
+          revealedIndices = new Set(Array.from({ length: text.length }, (_, i) => i));
+          render();
 
-                    <a href="Tanishq_cv.pdf" download class="download-resume">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
-                </div>
-            </div>
-        </section>
+          if (complete && !finished) {
+            finished = true;
+            // add glitch effect to container
+            container.classList.add('glitch-active');
+            // set data-text attribute for pseudo-elements
+            container.setAttribute('data-text', text);
+            if (onComplete) onComplete();
+          }
+        }
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-categories">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-react"></i></div>
-                            <div class="skill-name">React</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-vuejs"></i></div>
-                            <div class="skill-name">Vue.js</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-js"></i></div>
-                            <div class="skill-name">JavaScript</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-html5"></i></div>
-                            <div class="skill-name">HTML5</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
-                            <div class="skill-name">CSS3</div>
-                        </div>
-                    </div>
-                </div>
+        function startScrambling() {
+          if (intervalId) stopScramble(text, false);
+          isScrambling = true;
+          let currentIter = 0;
 
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-node"></i></div>
-                            <div class="skill-name">Node.js</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-python"></i></div>
-                            <div class="skill-name">Python</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-database"></i></div>
-                            <div class="skill-name">MongoDB</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-server"></i></div>
-                            <div class="skill-name">Express</div>
-                        </div>
-                    </div>
-                </div>
+          intervalId = setInterval(() => {
+            if (!isHovering && animateOn !== 'view' && animateOn !== 'both') {
+              stopScramble(text, false);
+              return;
+            }
 
-                <div class="skill-category">
-                    <h3>AI/ML</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                            <div class="skill-name">TensorFlow</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-robot"></i></div>
-                            <div class="skill-name">PyTorch</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
-                            <div class="skill-name">Data Analysis</div>
-                        </div>
-                    </div>
-                </div>
+            if (sequential) {
+              if (revealedIndices.size < text.length) {
+                const nextIdx = getNextIndex(revealedIndices);
+                const newSet = new Set(revealedIndices);
+                newSet.add(nextIdx);
+                revealedIndices = newSet;
+                displayText = shuffleText(text, revealedIndices);
+                render();
+              } else {
+                // fully revealed – trigger completion
+                stopScramble(text, true);
+              }
+            } else {
+              displayText = shuffleText(text, revealedIndices);
+              render();
+              currentIter++;
+              if (currentIter >= maxIterations) {
+                stopScramble(text, true);
+              }
+            }
+          }, speed);
+        }
 
-                <div class="skill-category">
-                    <h3>Tools</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-git-alt"></i></div>
-                            <div class="skill-name">Git</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                            <div class="skill-name">Docker</div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                            <div class="skill-name">AWS</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        // event listeners
+        const onMouseEnter = () => {
+          if (finished) return; // if already glitching, no more decrypt on hover
+          if (animateOn === 'hover' || animateOn === 'both') {
+            isHovering = true;
+            revealedIndices = new Set();
+            startScrambling();
+          }
+        };
+        const onMouseLeave = () => {
+          if (finished) return;
+          if (animateOn === 'hover' || animateOn === 'both') {
+            isHovering = false;
+            stopScramble(text, false);
+          }
+        };
+        container.addEventListener('mouseenter', onMouseEnter);
+        container.addEventListener('mouseleave', onMouseLeave);
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="section-title">Featured Projects</h2>
-            
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="frontend">Frontend</button>
-                <button class="filter-btn" data-filter="fullstack">Full Stack</button>
-                <button class="filter-btn" data-filter="ai">AI/ML</button>
-            </div>
+        // intersection observer for view trigger
+        if (animateOn === 'view' || animateOn === 'both') {
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting && !hasAnimated && !finished) {
+                hasAnimated = true;
+                isHovering = true;
+                revealedIndices = new Set();
+                startScrambling();
+              }
+            });
+          }, { threshold: 0.1 });
+          obs.observe(container);
+        }
 
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Project 1 -->
-                <div class="project-card" data-category="fullstack">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="EcoTracker" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">EcoTracker Dashboard</h3>
-                        <p class="project-desc">Real-time environmental monitoring dashboard with predictive analytics using machine learning.</p>
-                        <div class="project-tech">
-                            <span class="project-tech-icon"><i class="fab fa-react"></i></span>
-                            <span class="project-tech-icon"><i class="fab fa-node"></i></span>
-                            <span class="project-tech-icon"><i class="fas fa-brain"></i></span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
+        // initial full reveal (no glitch yet)
+        stopScramble(text, false);
+        return container;
+      }
 
-                <!-- Project 2 -->
-                <div class="project-card" data-category="ai">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="HealthConnect" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">HealthConnect AI</h3>
-                        <p class="project-desc">Telemedicine platform with AI-powered diagnostics and patient monitoring system.</p>
-                        <div class="project-tech">
-                            <span class="project-tech-icon"><i class="fab fa-vuejs"></i></span>
-                            <span class="project-tech-icon"><i class="fab fa-python"></i></span>
-                            <span class="project-tech-icon"><i class="fas fa-robot"></i></span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
+      // --------------------------------------------------------------
+      // 2. Magenta falling particles (white + magenta, slow/fast)
+      // --------------------------------------------------------------
+      function initMagentaParticles() {
+        const canvas = document.getElementById('magenta-particles');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
 
-                <!-- Project 3 -->
-                <div class="project-card" data-category="frontend">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="FinTech" class="project-img">
-                    <div class="project-content">
-                        <h3 class="project-title">FinTech Analytics</h3>
-                        <p class="project-desc">Financial analysis platform with real-time market data visualization.</p>
-                        <div class="project-tech">
-                            <span class="project-tech-icon"><i class="fab fa-angular"></i></span>
-                            <span class="project-tech-icon"><i class="fab fa-node"></i></span>
-                            <span class="project-tech-icon"><i class="fas fa-chart-bar"></i></span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link live-demo"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        const PARTICLE_COUNT = 260;
+        const FAST_RATIO = 0.2;
 
-        <!-- Resume Section -->
-        <section id="resume">
-            <h2 class="section-title">Resume</h2>
-            <div class="resume-container">
-                <div class="resume-column">
-                    <h3>Experience</h3>
-                    <div class="resume-item">
-                        <h4>Frontend Developer</h4>
-                        <div class="meta">Innovate Labs | 2024-Present</div>
-                        <p>Developing responsive web applications with modern frameworks and best practices.</p>
-                    </div>
-                    <div class="resume-item">
-                        <h4>AI/ML Intern</h4>
-                        <div class="meta">Tech Solutions | 2024</div>
-                        <p>Worked on machine learning models for predictive analytics.</p>
-                    </div>
-                </div>
+        function resize() {
+          width = window.innerWidth;
+          height = window.innerHeight;
+          canvas.width = width;
+          canvas.height = height;
+          initParticles();
+        }
 
-                <div class="resume-column">
-                    <h3>Education</h3>
-                    <div class="resume-item">
-                        <h4>Bachelor of Technology</h4>
-                        <div class="meta">USICT | 2024-2028</div>
-                        <p>Computer Science with specialization in Data Science</p>
-                    </div>
-                </div>
+        function initParticles() {
+          particles = [];
+          for (let i = 0; i < PARTICLE_COUNT; i++) {
+            const isFast = Math.random() < FAST_RATIO;
+            const baseSpeed = isFast ? 0.06 + Math.random() * 0.15 : 0.008 + Math.random() * 0.02; // slightly slower overall
+            let r, g, b;
+            const rand = Math.random();
+            if (rand < 0.4) {
+              r = 255; g = 180; b = 230;
+            } else if (rand < 0.8) {
+              r = 255; g = 120; b = 200;
+            } else {
+              r = 255; g = 200; b = 250;
+            }
 
-                <div class="resume-column">
-                    <h3>Certifications</h3>
-                    <div class="resume-item">
-                        <h4>Full Stack Development</h4>
-                        <div class="meta">Coursera | 2024</div>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Machine Learning Specialization</h4>
-                        <div class="meta">Stanford Online | 2024</div>
-                    </div>
-                </div>
+            particles.push({
+              x: Math.random() * width,
+              y: Math.random() * height,
+              radius: isFast ? Math.random() * 2.2 + 1.0 : Math.random() * 1.5 + 0.7,
+              speedY: baseSpeed * (0.7 + Math.random() * 0.6),
+              speedX: isFast ? (Math.random() - 0.5) * 0.08 : (Math.random() - 0.5) * 0.015,
+              r, g, b,
+              brightness: 0.5 + Math.random() * 0.5,
+              isFast,
+            });
+          }
+          // shuffle
+          for (let i = particles.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [particles[i], particles[j]] = [particles[j], particles[i]];
+          }
+        }
 
-                <div class="resume-column">
-                    <h3>Achievements</h3>
-                    <div class="resume-item">
-                        <h4>ISEA MEITY CDAC 2025 Winner</h4>
-                        <div class="meta">CDAC-NOIDA | 2025</div>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Finalist - Hack with Mait5.0</h4>
-                        <div class="meta">2024</div>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Best Innovation Award</h4>
-                        <div class="meta">College Tech Fest | 2024</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        function update() {
+          for (let p of particles) {
+            p.y += p.speedY;
+            p.x += p.speedX;
 
-        <!-- Blog Section -->
-        <section id="blog">
-            <h2 class="section-title">Latest Blog Posts</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-tags">
-                            <span class="blog-tag">AI</span>
-                            <span class="blog-tag">Machine Learning</span>
-                        </div>
-                        <h3 class="blog-title">Getting Started with TensorFlow</h3>
-                        <p class="blog-excerpt">Learn the basics of TensorFlow and build your first neural network...</p>
-                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            if (p.y > height + 20) {
+              p.y = -20;
+              p.x = Math.random() * width;
+              p.speedY = (p.isFast ? 0.06 + Math.random()*0.15 : 0.008 + Math.random()*0.02);
+              p.speedX = p.isFast ? (Math.random()-0.5)*0.08 : (Math.random()-0.5)*0.015;
+            }
+            if (p.x < -20) p.x = width + 20;
+            if (p.x > width + 20) p.x = -20;
+          }
+        }
 
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-tags">
-                            <span class="blog-tag">React</span>
-                            <span class="blog-tag">Performance</span>
-                        </div>
-                        <h3 class="blog-title">Optimizing React Apps</h3>
-                        <p class="blog-excerpt">Tips and tricks to make your React applications lightning fast...</p>
-                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+        function draw() {
+          ctx.clearRect(0, 0, width, height);
 
-                <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
-                    <div class="blog-content">
-                        <div class="blog-tags">
-                            <span class="blog-tag">Data Science</span>
-                            <span class="blog-tag">Python</span>
-                        </div>
-                        <h3 class="blog-title">Data Visualization with Python</h3>
-                        <p class="blog-excerpt">Create stunning visualizations using Matplotlib and Seaborn...</p>
-                        <a href="#" class="blog-read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-        </section>
+          for (let p of particles) {
+            const alpha = p.brightness * (0.6 + 0.3 * Math.sin(Date.now() * 0.002 + p.x));
+            ctx.fillStyle = `rgba(${p.r}, ${p.g}, ${p.b}, ${alpha})`;
 
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <h2 class="section-title">What People Say</h2>
-            <div class="testimonials-carousel swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <img src="garv.jpg" alt="Garv" class="testimonial-img" onerror="this.src='https://via.placeholder.com/100x100/6c5ce7/ffffff?text=G'">
-                            <p class="testimonial-text">"Tanishq is an exceptional developer. His attention to detail and problem-solving skills are outstanding."</p>
-                            <h4 class="testimonial-name">Garv</h4>
-                            <p class="testimonial-role">CLASSMATE</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="testimonial-card">
-                            <img src="gaurav.jpg" alt="Gaurav" class="testimonial-img" onerror="this.src='practice js\gaurav.jpg'">
-                            <p class="testimonial-text">"Working with Tanishq was a pleasure. He delivered the project on time and exceeded our expectations."</p>
-                            <h4 class="testimonial-name">Gaurav</h4>
-                            <p class="testimonial-role">CLASSMATE</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+            ctx.fill();
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Let's Connect</h3>
-                    <div class="contact-detail">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                        <a href="mailto:tanishqkrkashyap@gmail.com" class="contact-text">tanishqkrkashyap@gmail.com</a>
-                    </div>
-                    <div class="contact-detail">
-                        <div class="contact-icon"><i class="fab fa-github"></i></div>
-                        <a href="https://github.com/tanishq1414" target="_blank" class="contact-text">github.com/tanishq1414</a>
-                    </div>
-                    <div class="contact-detail">
-                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                        <a href="https://www.linkedin.com/in/tanishq-kumar-kashyap-a78788322" target="_blank" class="contact-text">Tanishq Kumar Kashyap</a>
-                    </div>
+            if (p.isFast && p.speedY > 0.03) {
+              ctx.fillStyle = `rgba(${p.r}, ${p.g}, ${p.b}, ${alpha * 0.25})`;
+              ctx.beginPath();
+              ctx.arc(p.x - p.speedX * 12, p.y - p.speedY * 10, p.radius * 0.8, 0, Math.PI*2);
+              ctx.fill();
 
-                    <div class="map-container">
-                        <div class="map-placeholder">
-                            <i class="fas fa-map-marker-alt"></i> New Delhi, India
-                        </div>
-                    </div>
-                </div>
+              ctx.fillStyle = `rgba(${p.r}, ${p.g}, ${p.b}, ${alpha * 0.1})`;
+              ctx.beginPath();
+              ctx.arc(p.x - p.speedX * 24, p.y - p.speedY * 22, p.radius * 0.5, 0, Math.PI*2);
+              ctx.fill();
+            }
+          }
+        }
 
-                <form class="contact-form" id="contactForm">
-                    <div class="success-message hidden" id="successMessage">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Message Sent!</h3>
-                        <p>Thank you for reaching out. I'll get back to you soon.</p>
-                    </div>
+        function animate() {
+          update();
+          draw();
+          requestAnimationFrame(animate);
+        }
 
-                    <div id="formFields">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+      }
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Tanishq Kumar Kashyap. All rights reserved.</p>
-    </footer>
+      // --------------------------------------------------------------
+      // 3. Mount everything
+      // --------------------------------------------------------------
+      window.addEventListener('load', () => {
+        // headline "TANISHQ" – slower, then glitch
+        const headlineContainer = document.getElementById('decrypted-headline');
+        const headlineDecrypt = createDecryptedTextWithGlitch({
+          text: 'TANISHQ',
+          speed: 140,           // slow decryption
+          maxIterations: 18,
+          sequential: true,
+          revealDirection: 'center',
+          characters: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&*?+',
+          className: 'magenta-revealed',
+          parentClassName: 'decrypt-parent',
+          encryptedClassName: 'magenta-encrypted',
+          animateOn: 'both',
+          onComplete: () => console.log('headline glitch activated'),
+        });
+        headlineContainer.appendChild(headlineDecrypt);
 
-    <!-- Hidden 404 Page Template -->
-    <div class="error-page" style="display: none;" id="errorPage">
-        <div>
-            <div class="error-code">404</div>
-            <h2 class="error-title">Page Not Found</h2>
-            <p class="error-text">The page you're looking for doesn't exist or has been moved.</p>
-            <a href="#home" class="btn btn-primary">Go Home</a>
-        </div>
-    </div>
+        // tagline – also slower, with glitch after completion
+        const taglineContainer = document.getElementById('decrypted-tagline');
+        const taglineDecrypt = createDecryptedTextWithGlitch({
+          text: 'Engineering the unseen.\n Building what tomorrow hasn’t imagined yet.',
+          speed: 100,            // a bit faster than headline but still slow
+          maxIterations: 14,
+          sequential: false,     // shuffle style
+          revealDirection: 'start',
+          characters: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*',
+          className: 'magenta-revealed',
+          parentClassName: 'tagline-parent',
+          encryptedClassName: 'magenta-encrypted',
+          animateOn: 'both',
+          onComplete: () => console.log('tagline glitch active'),
+        });
+        taglineContainer.appendChild(taglineDecrypt);
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="script.js"></script>
+        // start particles
+        initMagentaParticles();
+
+        // BUTTON CLICK - redirect to main.html
+        document.getElementById('enter-portfolio-btn').addEventListener('click', () => {
+          window.location.href = 'main.html';  // redirects to main.html in same folder
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
