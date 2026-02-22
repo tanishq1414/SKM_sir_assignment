@@ -44,31 +44,42 @@
     <!-- Scroll Progress -->
     <div class="scroll-progress" id="scroll-progress"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="logo.png" alt="Tanishq Kumar Kashyap Logo" onerror="this.src='https://via.placeholder.com/150x150/6c5ce7/ffffff?text=TK'">
-            </div>
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
-                <a href="#achievements" class="nav-link">Achievements</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+    <!-- Navigation - LOGO REMOVED, only name remains -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img 
+                src="logo.png" 
+                alt="Tanishq Logo"
+                style="
+                    height: 200px;
+                    width: auto;
+                    object-fit: contain;
+                    border: none;
+                    background: transparent;
+                    filter: drop-shadow(0px 0px 15px rgba(124, 58, 237, 0.8));
+                "
+            >
         </div>
-    </nav>
 
-    <!-- Galaxy Canvas Container -->
-    <div id="galaxy-container"></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#resume" class="nav-link">Resume</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
+    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
 
     <main class="main-container">
         <!-- Hero Section -->
@@ -117,7 +128,7 @@
             </div>
         </section>
 
-        <!-- About Section with HashTag Blinking Effect -->
+        <!-- About Section with Stats Cards -->
         <section id="about">
             <div class="section-header">
                 <span class="hash-tag blinking-hash">#</span>
@@ -125,7 +136,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-img-container glass-card">
-                    <img src="tanishq.jpg" alt="Tanishq Kumar Kashyap" class="about-img" onerror="this.src='https://via.placeholder.com/600x400/6c5ce7/ffffff?text=Tanishq+Kumar'">
+                    <img src="tanishq2.jpg" alt="Tanishq Kumar Kashyap" class="about-img" onerror="this.src='https://via.placeholder.com/600x400/6c5ce7/ffffff?text=Tanishq+Kumar'">
                 </div>
                 <div class="about-content">
                     <h3>Passionate Developer & AI Enthusiast</h3>
@@ -135,32 +146,35 @@
                         responsive web applications and intelligent systems that enhance user experiences.
                     </p>
 
-                    <!-- Stats Counter Section -->
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="10" id="stat-hackathons">0</div>
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="10">0</div>
                             <div class="stat-label">Hackathons</div>
-                            <div class="stat-plus">+</div>
+                            <div class="stat-symbol">+</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="5" id="stat-finalist">0</div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="5">0</div>
                             <div class="stat-label">Finalist</div>
-                            <div class="stat-plus"></div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="8" id="stat-projects">0</div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="8">0</div>
                             <div class="stat-label">Ongoing Projects</div>
-                            <div class="stat-plus">+</div>
+                            <div class="stat-symbol">+</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="6" id="stat-technologies">0</div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="6">0</div>
                             <div class="stat-label">Technologies</div>
-                            <div class="stat-plus">+</div>
+                            <div class="stat-symbol">+</div>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-number" data-target="4" id="stat-expertise">0</div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="4">0</div>
                             <div class="stat-label">Expertise Areas</div>
-                            <div class="stat-plus">+</div>
+                            <div class="stat-symbol">+</div>
                         </div>
                     </div>
 
@@ -222,7 +236,7 @@
             </div>
         </section>
 
-        <!-- Skills Section with Thin Glowing Border -->
+        <!-- Skills Section -->
         <section id="skills">
             <div class="section-header">
                 <span class="hash-tag blinking-hash">#</span>
@@ -386,68 +400,62 @@
             </div>
         </section>
 
-        <!-- Certifications Section with Parallax -->
-        <section id="certifications" class="parallax-section">
-            <div class="parallax-bg"></div>
+        <!-- Resume Section -->
+        <section id="resume">
             <div class="section-header">
                 <span class="hash-tag blinking-hash">#</span>
-                <h2 class="section-title">Certifications</h2>
+                <h2 class="section-title">Resume</h2>
             </div>
-            <div class="certifications-grid">
-                <div class="certification-card">
-                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Full Stack Development</h3>
-                    <p class="cert-issuer">Coursera</p>
-                    <p class="cert-date">2024</p>
+            <div class="resume-container">
+                <div class="resume-column">
+                    <h3>Experience</h3>
+                    <div class="resume-item">
+                        <h4>Frontend Developer</h4>
+                        <div class="meta">Innovate Labs | 2024-Present</div>
+                        <p>Developing responsive web applications with modern frameworks and best practices.</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>AI/ML Intern</h4>
+                        <div class="meta">Tech Solutions | 2024</div>
+                        <p>Worked on machine learning models for predictive analytics.</p>
+                    </div>
                 </div>
-                <div class="certification-card">
-                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Machine Learning Specialization</h3>
-                    <p class="cert-issuer">Stanford Online</p>
-                    <p class="cert-date">2024</p>
-                </div>
-                <div class="certification-card">
-                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Advanced React</h3>
-                    <p class="cert-issuer">Meta</p>
-                    <p class="cert-date">2024</p>
-                </div>
-                <div class="certification-card">
-                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Data Science Professional</h3>
-                    <p class="cert-issuer">IBM</p>
-                    <p class="cert-date">2024</p>
-                </div>
-            </div>
-        </section>
 
-        <!-- Achievements Section with Parallax -->
-        <section id="achievements" class="parallax-section">
-            <div class="parallax-bg"></div>
-            <div class="section-header">
-                <span class="hash-tag blinking-hash">#</span>
-                <h2 class="section-title">Achievements</h2>
-            </div>
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
-                    <h3>ISEA MEITY CDAC 2025 Winner</h3>
-                    <p>CDAC-NOIDA</p>
+                <div class="resume-column">
+                    <h3>Education</h3>
+                    <div class="resume-item">
+                        <h4>Bachelor of Technology</h4>
+                        <div class="meta">USICT | 2024-2028</div>
+                        <p>Computer Science with specialization in Data Science</p>
+                    </div>
                 </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
-                    <h3>Finalist - Hack with Mait5.0</h3>
-                    <p>USICT</p>
+
+                <div class="resume-column">
+                    <h3>Certifications</h3>
+                    <div class="resume-item">
+                        <h4>Full Stack Development</h4>
+                        <div class="meta">Coursera | 2024</div>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Machine Learning Specialization</h4>
+                        <div class="meta">Stanford Online | 2024</div>
+                    </div>
                 </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-award"></i></div>
-                    <h3>Best Innovation Award</h3>
-                    <p>College Tech Fest 2024</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon"><i class="fas fa-star"></i></div>
-                    <h3>Top 10 in National Hackathon</h3>
-                    <p>Smart India Hackathon 2024</p>
+
+                <div class="resume-column">
+                    <h3>Achievements</h3>
+                    <div class="resume-item">
+                        <h4>ISEA MEITY CDAC 2025 Winner</h4>
+                        <div class="meta">CDAC-NOIDA | 2025</div>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Finalist - Hack with Mait5.0</h4>
+                        <div class="meta">2024</div>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Best Innovation Award</h4>
+                        <div class="meta">College Tech Fest | 2024</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -529,7 +537,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section with Netlify Form - UPDATED WITH REQUESTED FORMAT -->
         <section id="contact">
             <div class="section-header">
                 <span class="hash-tag blinking-hash">#</span>
@@ -558,25 +566,31 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
-                    <div class="success-message hidden" id="successMessage">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Message Sent!</h3>
-                        <p>Thank you for reaching out. I'll get back to you soon.</p>
+                <!-- NETLIFY FORM - UPDATED WITH REQUESTED FORMAT -->
+                <form 
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    netlify
+                    id="netlifyContactForm"
+                    class="contact-form"
+                >
+
+                    <input type="hidden" name="form-name" value="contact" />
+
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Gmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
                     </div>
 
-                    <div id="formFields">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </div>
+                    <button type="submit" class="send-btn submit-btn">Send</button>
                 </form>
             </div>
         </section>
@@ -586,6 +600,16 @@
     <footer class="footer">
         <p>&copy; 2025 Tanishq Kumar Kashyap. All rights reserved.</p>
     </footer>
+
+    <!-- Thank You Page (Hidden by default) -->
+    <div class="thank-you-page" style="display: none;" id="thankYouPage">
+        <div class="thank-you-content">
+            <div class="thank-you-icon"><i class="fas fa-check-circle"></i></div>
+            <h1 class="thank-you-title">Thank You!</h1>
+            <p class="thank-you-message">Your message has been sent successfully. I'll get back to you soon.</p>
+            <a href="#home" class="btn btn-primary">Go Back Home</a>
+        </div>
+    </div>
 
     <!-- Hidden 404 Page Template -->
     <div class="error-page" style="display: none;" id="errorPage">
@@ -601,6 +625,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
