@@ -163,20 +163,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Galaxy Effect
     initGalaxyEffect();
 
-    // Counter Animation for Stats - FIXED VERSION
+    // Counter Animation for Stats
     const statNumbers = document.querySelectorAll('.stat-number');
     
     function animateStats() {
         statNumbers.forEach(stat => {
             const target = parseInt(stat.getAttribute('data-target'));
-            if (isNaN(target)) return; // Skip if no target attribute
+            if (isNaN(target)) return;
             
             let current = 0;
-            const increment = target / 50; // Increment over 50 steps
-            const duration = 2000; // 2 seconds total
-            const stepTime = duration / 50; // Time per step in milliseconds
+            const increment = target / 50;
+            const duration = 2000;
+            const stepTime = duration / 50;
             
-            // Start from 0
             stat.textContent = '0';
             
             function updateCounter() {
@@ -187,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     stat.textContent = target;
                     
-                    // Add a small animation effect when reaching target
                     stat.style.transform = 'scale(1.2)';
                     setTimeout(() => {
                         stat.style.transform = 'scale(1)';
@@ -195,28 +193,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            setTimeout(updateCounter, 100); // Small delay before starting
+            setTimeout(updateCounter, 100);
         });
     }
 
-    // Reset stats to 0 initially
     function resetStats() {
         statNumbers.forEach(stat => {
             stat.textContent = '0';
         });
     }
 
-    // Trigger stats animation when about section is visible
     const aboutSection = document.getElementById('about');
-    let statsAnimated = false; // Flag to prevent multiple animations
+    let statsAnimated = false;
     
     if (aboutSection) {
         const statsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !statsAnimated) {
-                    // Reset to 0 first
                     resetStats();
-                    // Then animate
                     animateStats();
                     statsAnimated = true;
                 }
@@ -230,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
         gsap.registerPlugin(ScrollTrigger);
 
-        // Animate sections
         gsap.utils.toArray('.glass-card, .certification-card, .achievement-card, .stat-item').forEach((card) => {
             gsap.fromTo(card, 
                 { y: 50, opacity: 0 },
@@ -248,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
 
-        // Parallax effect for certification and achievements sections
         gsap.utils.toArray('.parallax-bg').forEach(bg => {
             gsap.to(bg, {
                 y: 100,
@@ -262,7 +254,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Animate timeline items
         gsap.utils.toArray('.timeline-item').forEach((item, index) => {
             gsap.fromTo(item,
                 { x: -50, opacity: 0 },
@@ -281,7 +272,6 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
 
-        // Animate tech tags
         gsap.utils.toArray('.tech-tag').forEach((tag, index) => {
             gsap.fromTo(tag,
                 { scale: 0, opacity: 0 },
@@ -367,49 +357,114 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Form Submission
-    const contactForm = document.getElementById('contactForm');
-    const formFields = document.getElementById('formFields');
-    const successMessage = document.getElementById('successMessage');
+    // ===== UPDATED NETLIFY FORM SUBMISSION =====
+    const netlifyForm = document.getElementById('netlifyContactForm');
+    const thankYouPage = document.getElementById('thankYouPage');
+    const contactSection = document.getElementById('contact');
 
-    if (contactForm && formFields && successMessage) {
-        contactForm.addEventListener('submit', (e) => {
+    if (netlifyForm) {
+        // Create success message element
+        const successMessage = document.createElement('div');
+        successMessage.className = 'success-message';
+        successMessage.innerHTML = `
+            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h3 style="margin-bottom: 0.5rem;">Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+        `;
+        successMessage.style.cssText = `
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 1rem;
+            border: 1px solid var(--primary);
+            animation: fadeIn 0.5s ease;
+        `;
+        
+        // Insert success message after form
+        netlifyForm.parentNode.insertBefore(successMessage, netlifyForm.nextSibling);
+
+        // Handle form submission
+        netlifyForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Animate form submission
-            gsap.to(formFields, {
-                opacity: 0,
-                scale: 0.95,
-                duration: 0.3,
-                onComplete: () => {
-                    formFields.style.display = 'none';
-                    successMessage.classList.remove('hidden');
-                    
-                    // Animate success message
-                    gsap.fromTo(successMessage,
-                        { scale: 0.8, opacity: 0, y: 20 },
-                        { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.2)' }
-                    );
-                }
-            });
+            const submitBtn = netlifyForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             
-            setTimeout(() => {
-                gsap.to(successMessage, {
-                    opacity: 0,
-                    scale: 0.95,
-                    duration: 0.3,
-                    onComplete: () => {
-                        formFields.style.display = 'block';
-                        successMessage.classList.add('hidden');
-                        contactForm.reset();
-                        
-                        gsap.fromTo(formFields,
-                            { opacity: 0, scale: 0.95, y: 20 },
-                            { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: 'back.out(1.2)' }
-                        );
-                    }
+            // Validate form fields
+            const name = netlifyForm.querySelector('input[name="name"]').value;
+            const email = netlifyForm.querySelector('input[name="email"]').value;
+            const message = netlifyForm.querySelector('textarea[name="message"]').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Prepare form data
+            const formData = new FormData(netlifyForm);
+            
+            try {
+                // Submit to Netlify
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
                 });
-            }, 3000);
+                
+                if (response.ok) {
+                    // Hide form
+                    gsap.to(netlifyForm, {
+                        opacity: 0,
+                        scale: 0.95,
+                        duration: 0.3,
+                        onComplete: () => {
+                            netlifyForm.style.display = 'none';
+                            
+                            // Show success message
+                            successMessage.style.display = 'block';
+                            gsap.fromTo(successMessage,
+                                { scale: 0.8, opacity: 0, y: 20 },
+                                { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: 'back.out(1.2)' }
+                            );
+                        }
+                    });
+                    
+                    // Reset form
+                    netlifyForm.reset();
+                    
+                    // Show form again after 5 seconds
+                    setTimeout(() => {
+                        gsap.to(successMessage, {
+                            opacity: 0,
+                            scale: 0.95,
+                            duration: 0.3,
+                            onComplete: () => {
+                                successMessage.style.display = 'none';
+                                netlifyForm.style.display = 'block';
+                                submitBtn.innerHTML = originalText;
+                                submitBtn.disabled = false;
+                                
+                                gsap.fromTo(netlifyForm,
+                                    { opacity: 0, scale: 0.95 },
+                                    { opacity: 1, scale: 1, duration: 0.3 }
+                                );
+                            }
+                        });
+                    }, 5000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error sending your message. Please try again or email me directly at tanishqkrkashyap@gmail.com');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
         });
     }
 
@@ -418,7 +473,6 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             
-            // Create custom notification
             const notification = document.createElement('div');
             notification.className = 'custom-notification';
             notification.innerHTML = '🌟 Live demo coming soon! Check back later.';
@@ -459,6 +513,10 @@ document.addEventListener('DOMContentLoaded', () => {
             from { transform: translateX(-50%) translateY(0); opacity: 1; }
             to { transform: translateX(-50%) translateY(100px); opacity: 0; }
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
     `;
     document.head.appendChild(style);
 
@@ -467,7 +525,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContainer = document.querySelector('.main-container');
     
     if (errorPage && mainContainer) {
-        // Check if current path is 404 (for demo purposes)
         if (window.location.pathname.includes('404') || window.location.pathname.includes('error')) {
             mainContainer.style.display = 'none';
             errorPage.style.display = 'flex';
@@ -493,13 +550,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Add error handlers to all images
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('error', function() {
             handleImageError(this);
         });
         
-        // Check if image is already loaded with error
         if (img.complete && img.naturalHeight === 0) {
             handleImageError(img);
         }
@@ -555,24 +610,8 @@ function initGalaxyEffect() {
         return;
     }
     
-    // Check if Three.js is available
     if (typeof THREE === 'undefined') {
         console.log('Three.js not loaded, using fallback gradient background');
-        // Fallback gradient animation
-        let hue = 260; // Start with purple
-        setInterval(() => {
-            hue = (hue + 0.1) % 360;
-            container.style.background = `radial-gradient(circle at center, hsl(${hue}, 80%, 20%), hsl(${hue - 20}, 80%, 10%))`;
-        }, 50);
-        return;
-    }
-
-    // Check if WebGL is supported
-    const canvas = document.createElement('canvas');
-    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-    if (!gl) {
-        console.log('WebGL not supported, using fallback gradient background');
-        // Fallback gradient animation
         let hue = 260;
         setInterval(() => {
             hue = (hue + 0.1) % 360;
@@ -581,7 +620,18 @@ function initGalaxyEffect() {
         return;
     }
 
-    // Vertex Shader
+    const canvas = document.createElement('canvas');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) {
+        console.log('WebGL not supported, using fallback gradient background');
+        let hue = 260;
+        setInterval(() => {
+            hue = (hue + 0.1) % 360;
+            container.style.background = `radial-gradient(circle at center, hsl(${hue}, 80%, 20%), hsl(${hue - 20}, 80%, 10%))`;
+        }, 50);
+        return;
+    }
+
     const vertexShader = `
         attribute vec2 uv;
         attribute vec2 position;
@@ -592,7 +642,6 @@ function initGalaxyEffect() {
         }
     `;
 
-    // Fragment Shader (simplified for better performance)
     const fragmentShader = `
         precision highp float;
         
@@ -609,7 +658,6 @@ function initGalaxyEffect() {
         void main() {
             vec2 uv = vUv;
             
-            // Create star field
             float stars = 0.0;
             vec2 grid = uv * 20.0;
             vec2 gv = fract(grid) - 0.5;
@@ -622,15 +670,13 @@ function initGalaxyEffect() {
             float star = 0.02 / dist * brightness;
             stars += star * step(random(id), 0.3);
             
-            // Purple-magenta-blue gradient
-            vec3 color1 = vec3(0.42, 0.36, 0.91); // #6c5ce7
-            vec3 color2 = vec3(0.62, 0.39, 0.96); // #9d4edd
-            vec3 color3 = vec3(0.29, 0.56, 0.89); // #4a90e2
+            vec3 color1 = vec3(0.42, 0.36, 0.91);
+            vec3 color2 = vec3(0.62, 0.39, 0.96);
+            vec3 color3 = vec3(0.29, 0.56, 0.89);
             
             vec3 bg = mix(color1, color2, uv.x);
             bg = mix(bg, color3, uv.y);
             
-            // Mouse interaction
             float mouseDist = distance(uv, uMouse);
             bg += vec3(0.2, 0.1, 0.3) * (0.1 / (mouseDist + 0.1));
             
@@ -641,13 +687,11 @@ function initGalaxyEffect() {
     `;
 
     try {
-        // Setup WebGL
         const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
         renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         container.appendChild(canvas);
 
-        // Create shader material
         const material = new THREE.ShaderMaterial({
             vertexShader: vertexShader,
             fragmentShader: fragmentShader,
@@ -659,7 +703,6 @@ function initGalaxyEffect() {
             transparent: true
         });
 
-        // Create fullscreen quad
         const geometry = new THREE.PlaneGeometry(2, 2);
         const mesh = new THREE.Mesh(geometry, material);
         
@@ -669,7 +712,6 @@ function initGalaxyEffect() {
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
         camera.position.z = 1;
 
-        // Mouse interaction
         const targetMousePos = { x: 0.5, y: 0.5 };
         const smoothMousePos = { x: 0.5, y: 0.5 };
 
@@ -681,7 +723,6 @@ function initGalaxyEffect() {
             targetMousePos.y = y;
         });
 
-        // Resize handler
         function resize() {
             const width = container.clientWidth;
             const height = container.clientHeight;
@@ -692,7 +733,6 @@ function initGalaxyEffect() {
         
         window.addEventListener('resize', resize);
 
-        // Animation loop
         let animationFrame;
         let startTime = performance.now();
 
@@ -701,12 +741,10 @@ function initGalaxyEffect() {
             
             const time = (performance.now() - startTime) * 0.001;
             
-            // Smooth mouse movement
             const lerpFactor = 0.05;
             smoothMousePos.x += (targetMousePos.x - smoothMousePos.x) * lerpFactor;
             smoothMousePos.y += (targetMousePos.y - smoothMousePos.y) * lerpFactor;
             
-            // Update uniforms
             material.uniforms.uTime.value = time;
             material.uniforms.uMouse.value = [smoothMousePos.x, smoothMousePos.y];
             
@@ -715,7 +753,6 @@ function initGalaxyEffect() {
         
         animate();
 
-        // Cleanup on page unload
         window.addEventListener('beforeunload', () => {
             if (animationFrame) {
                 cancelAnimationFrame(animationFrame);
@@ -724,7 +761,6 @@ function initGalaxyEffect() {
         });
     } catch (error) {
         console.log('WebGL initialization error:', error);
-        // Fallback gradient animation
         let hue = 260;
         setInterval(() => {
             hue = (hue + 0.1) % 360;
