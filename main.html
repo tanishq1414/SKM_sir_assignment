@@ -24,12 +24,6 @@
     
     <!-- Swiper CSS for Carousel -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <style>
-        /* Emergency fallback styles in case CSS fails to load */
-        .btn, .section-header, .hero, .navbar { visibility: visible !important; }
-        .error-message { display: none; }
-    </style>
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -50,42 +44,40 @@
     <!-- Scroll Progress -->
     <div class="scroll-progress" id="scroll-progress"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img 
-                    src="logo.png" 
-                    alt="Tanishq Logo"
-                    onerror="this.style.display='none'; this.parentElement.innerHTML = '<span class=\'logo-fallback\'>TK</span>';"
-                    style="
-                        height: 200px;
-                        width: auto;
-                        object-fit: contain;
-                        border: none;
-                        background: transparent;
-                        filter: drop-shadow(0px 0px 15px rgba(124, 58, 237, 0.8));
-                    "
-                >
-            </div>
-
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#resume" class="nav-link">Resume</a>
-                <a href="#blog" class="nav-link">Blog</a>
-                <a href="#testimonials" class="nav-link">Testimonials</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-
-            <div class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+    <!-- Navigation - LOGO REMOVED, only name remains -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img 
+                src="logo.png" 
+                alt="Tanishq Logo"
+                style="
+                    height: 200px;
+                    width: auto;
+                    object-fit: contain;
+                    border: none;
+                    background: transparent;
+                    filter: drop-shadow(0px 0px 15px rgba(124, 58, 237, 0.8));
+                "
+            >
         </div>
-    </nav>
 
+        <div class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#resume" class="nav-link">Resume</a>
+            <a href="#blog" class="nav-link">Blog</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</nav>
     <!-- Particles Canvas -->
     <canvas id="particles-canvas"></canvas>
 
@@ -105,8 +97,7 @@
                         <a href="#projects" class="btn btn-primary">
                             <i class="fas fa-eye"></i> View Projects
                         </a>
-                        <!-- Fixed resume download link - using data URI as fallback -->
-                        <a href="#" onclick="downloadResume(event)" class="btn btn-outline">
+                        <a href="Tanishq_cv.pdf" download class="btn btn-outline">
                             <i class="fas fa-download"></i> Download Resume
                         </a>
                         <a href="#contact" class="btn btn-outline">
@@ -131,8 +122,7 @@
                     <div class="profile-container">
                         <div class="orbit-ring"></div>
                         <div class="orbit-ring"></div>
-                        <img src="tanishq.jpg" alt="Tanishq Kumar Kashyap" class="profile-img" 
-                             onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22 viewBox=%220 0 400 400%22><rect width=%22400%22 height=%22400%22 fill=%22%236c5ce7%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2250%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23ffffff%22 font-family=%22Arial%22>TK</text></svg>'">
+                        <img src="tanishq.jpg" alt="Tanishq Kumar Kashyap" class="profile-img" onerror="this.src='https://via.placeholder.com/400x400/6c5ce7/ffffff?text=TK'">
                     </div>
                 </div>
             </div>
@@ -146,8 +136,7 @@
             </div>
             <div class="about-grid">
                 <div class="about-img-container glass-card">
-                    <img src="tanishq2.jpg" alt="Tanishq Kumar Kashyap" class="about-img" 
-                         onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22><rect width=%22600%22 height=%22400%22 fill=%22%236c5ce7%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2230%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23ffffff%22 font-family=%22Arial%22>Tanishq Kumar</text></svg>'">
+                    <img src="tanishq2.jpg" alt="Tanishq Kumar Kashyap" class="about-img" onerror="this.src='https://via.placeholder.com/600x400/6c5ce7/ffffff?text=Tanishq+Kumar'">
                 </div>
                 <div class="about-content">
                     <h3>Passionate Developer & AI Enthusiast</h3>
@@ -240,8 +229,7 @@
                         <span class="tech-tag">Leadership</span>
                     </div>
 
-                    <!-- Fixed download link -->
-                    <a href="#" onclick="downloadResume(event)" class="download-resume">
+                    <a href="Tanishq_resume.pdf" download class="download-resume">
                         <i class="fas fa-download"></i> Download Resume
                     </a>
                 </div>
@@ -358,7 +346,7 @@
             <div class="projects-grid" id="projectsGrid">
                 <!-- Project 1 -->
                 <div class="project-card" data-category="fullstack">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="EcoTracker" class="project-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="EcoTracker" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">EcoTracker Dashboard</h3>
                         <p class="project-desc">Real-time environmental monitoring dashboard with predictive analytics using machine learning.</p>
@@ -376,7 +364,7 @@
 
                 <!-- Project 2 -->
                 <div class="project-card" data-category="ai">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="HealthConnect" class="project-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="HealthConnect" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">HealthConnect AI</h3>
                         <p class="project-desc">Telemedicine platform with AI-powered diagnostics and patient monitoring system.</p>
@@ -394,7 +382,7 @@
 
                 <!-- Project 3 -->
                 <div class="project-card" data-category="frontend">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="FinTech" class="project-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="FinTech" class="project-img">
                     <div class="project-content">
                         <h3 class="project-title">FinTech Analytics</h3>
                         <p class="project-desc">Financial analysis platform with real-time market data visualization.</p>
@@ -480,7 +468,7 @@
             </div>
             <div class="blog-grid">
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Blog" class="blog-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
                     <div class="blog-content">
                         <div class="blog-tags">
                             <span class="blog-tag">AI</span>
@@ -493,7 +481,7 @@
                 </article>
 
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Blog" class="blog-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
                     <div class="blog-content">
                         <div class="blog-tags">
                             <span class="blog-tag">React</span>
@@ -506,7 +494,7 @@
                 </article>
 
                 <article class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Blog" class="blog-img" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop" alt="Blog" class="blog-img">
                     <div class="blog-content">
                         <div class="blog-tags">
                             <span class="blog-tag">Data Science</span>
@@ -530,8 +518,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <img src="garv.jpg" alt="Garv" class="testimonial-img" 
-                                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%236c5ce7%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23ffffff%22 font-family=%22Arial%22>G</text></svg>'">
+                            <img src="garv.jpg" alt="Garv" class="testimonial-img" onerror="this.src='https://via.placeholder.com/100x100/6c5ce7/ffffff?text=G'">
                             <p class="testimonial-text">"Tanishq is an exceptional developer. His attention to detail and problem-solving skills are outstanding."</p>
                             <h4 class="testimonial-name">Garv</h4>
                             <p class="testimonial-role">CLASSMATE</p>
@@ -539,8 +526,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="testimonial-card">
-                            <img src="gaurav.jpg" alt="Gaurav" class="testimonial-img" 
-                                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%236c5ce7%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2240%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23ffffff%22 font-family=%22Arial%22>G</text></svg>'">
+                            <img src="gaurav.jpg" alt="Gaurav" class="testimonial-img" onerror="this.src='https://via.placeholder.com/100x100/6c5ce7/ffffff?text=G'">
                             <p class="testimonial-text">"Working with Tanishq was a pleasure. He delivered the project on time and exceeded our expectations."</p>
                             <h4 class="testimonial-name">Gaurav</h4>
                             <p class="testimonial-role">CLASSMATE</p>
@@ -551,7 +537,7 @@
             </div>
         </section>
 
-        <!-- Contact Section with Netlify Form -->
+        <!-- Contact Section with Netlify Form - UPDATED WITH REQUESTED FORMAT -->
         <section id="contact">
             <div class="section-header">
                 <span class="hash-tag blinking-hash">#</span>
@@ -580,7 +566,7 @@
                     </div>
                 </div>
 
-                <!-- Netlify Form - Fixed -->
+                <!-- NETLIFY FORM - UPDATED WITH REQUESTED FORMAT -->
                 <form 
                     name="contact"
                     method="POST"
@@ -589,6 +575,7 @@
                     id="netlifyContactForm"
                     class="contact-form"
                 >
+
                     <input type="hidden" name="form-name" value="contact" />
 
                     <div class="form-group">
@@ -603,7 +590,7 @@
                         <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
                     </div>
 
-                    <button type="submit" class="send-btn submit-btn">Send Message</button>
+                    <button type="submit" class="send-btn submit-btn">Send</button>
                 </form>
             </div>
         </section>
@@ -639,121 +626,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    
-    <script>
-        // Fixed resume download function with fallback
-        function downloadResume(event) {
-            event.preventDefault();
-            
-            // Try to download the PDF file
-            const resumeUrl = 'Tanishq_Resume.pdf'; // Standardized filename
-            
-            fetch(resumeUrl, { method: 'HEAD' })
-                .then(response => {
-                    if (response.ok) {
-                        // File exists, trigger download
-                        const link = document.createElement('a');
-                        link.href = resumeUrl;
-                        link.download = 'Tanishq_Kumar_Kashyap_Resume.pdf';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
-                    } else {
-                        // File doesn't exist, show message
-                        alert('Resume PDF not found. Please contact me directly at tanishqkrkashyap@gmail.com for a copy of my resume.');
-                    }
-                })
-                .catch(() => {
-                    // Network error or file not found
-                    alert('Resume PDF not available for download. Please email me at tanishqkrkashyap@gmail.com to request my resume.');
-                });
-        }
-
-        // Handle form submission for Netlify
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('netlifyContactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    // Don't prevent default - let Netlify handle it
-                    // But we can show a loading state
-                    const submitBtn = this.querySelector('button[type="submit"]');
-                    if (submitBtn) {
-                        submitBtn.textContent = 'Sending...';
-                        submitBtn.disabled = true;
-                    }
-                });
-            }
-            
-            // Check if we're on the thank you page (for Netlify)
-            if (window.location.hash === '#thank-you') {
-                document.getElementById('thankYouPage').style.display = 'flex';
-                document.querySelector('.main-container').style.display = 'none';
-            }
-        });
-
-        // Basic stats counter animation
-        function animateStats() {
-            const statNumbers = document.querySelectorAll('.stat-number');
-            statNumbers.forEach(stat => {
-                const target = parseInt(stat.getAttribute('data-target'));
-                let current = 0;
-                const increment = target / 50; // Divide into 50 steps
-                
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        stat.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        stat.textContent = target;
-                    }
-                };
-                
-                updateCounter();
-            });
-        }
-
-        // Run stats animation when about section is visible
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateStats();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-            observer.observe(aboutSection);
-        }
-
-        // Mobile menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.getAttribute('href') !== '#') {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
-    </script>
-    
-    <!-- Link to external script.js (optional) -->
     <script src="script.js"></script>
 </body>
 </html>
